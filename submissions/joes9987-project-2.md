@@ -20,7 +20,7 @@ Build repo (public): https://github.com/joes9987/comms-joes9987
 - Next.js 16 App Router + Supabase Auth/Postgres/Realtime on Vercel
 - Seeded public channels: `#general`, `#random`, `#help`; staff `#announcements`
 - Channel create / rename / archive; 1:1 DMs; keyword search; in-app notifications (`chat_notifications`)
-- Realtime via Supabase `postgres_changes` with ≤4s polling fallback
+- Realtime via Supabase `postgres_changes` (no client polling)
 - Message history persisted in Postgres (no purge; ≥30 days)
 - Profile customization: avatar, banner, bio, private DOB; Discord-style profile popover in chat
 
@@ -54,7 +54,7 @@ Completed 2026-07-24 against `supabase/migrations/001_init.sql`–`005_*.sql` an
 - [x] Announcements: non-admin post blocked by `messages_insert` + UI gate
 - [x] Search: `/app/search` keyword `ilike` across channels + own DMs
 - [x] Notifications: DM / `@mention` rows written by triggers into `chat_notifications`
-- [x] Realtime: `postgres_changes` on `messages` + `chat_notifications` (polling fallback in UI)
+- [x] Realtime: `postgres_changes` on `messages` + `chat_notifications`
 - [x] No secrets in git: only `.env.example` committed; `.env.local` gitignored
 
 ## Agent usage
