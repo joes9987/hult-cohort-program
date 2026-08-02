@@ -10,8 +10,6 @@ Build repo (public): https://github.com/joes9987/showcase-joes9987
 
 Partner-facing README: https://github.com/joes9987/showcase-joes9987/blob/main/README.md
 
-Reviewer SCORECARD (/25): https://github.com/joes9987/showcase-joes9987/blob/main/SCORECARD.md
-
 ## Sample profile URLs
 
 - https://showcase-joes9987.vercel.app/people/joes9987
@@ -55,7 +53,7 @@ PM status from a committed Forth snapshot (`data/forth-status.json`, source http
 
 ## Smoke test
 
-- [x] Repo public with `AGENTS.md`, partner-facing `README.md`, `SCORECARD.md`
+- [x] Repo public with `AGENTS.md`, partner-facing `README.md`
 - [x] Deploy HTTPS; public pages require no auth
 - [x] Homepage narrative ≥ 200 words (partner-friendly; no backend leak)
 - [x] Roster profiles with bios/skills + GitHub avatars + skill/project filter
