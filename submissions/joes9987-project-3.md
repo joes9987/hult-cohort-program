@@ -47,8 +47,11 @@ PM status from a committed Forth snapshot (`data/forth-status.json`, source http
 - Tables: `showcase_members` (campus, skills, opt-out, links), `partner_requests`, `showcase_rsvps`
 - Public routes: `/`, `/people` (filter), `/people/[handle]`, `/partners` (intro + RSVP), `/suite`
 - Auth-aware header: Sign in → Claim → My profile / Edit / Sign out after claim
-- Partner intro + RSVP: always persist; email placement lead via Resend when configured (`emailed: true` in prod smoke)
-- Tests: `npm test` (vitest — partner intro parse, people filter, Forth snapshot)
+- Password reset: `/forgot-password` → `/auth/callback` → `/auth/update-password` (shared suite account)
+- Claim lock: GitHub handle = email local-part; peers cannot claim another builder’s card
+- Partner intro + RSVP: persist + Resend; length caps + per-email/global hourly rate limits
+- Profile links use neutral Project 1 / Project 2 labels (not Euda-branded peer products)
+- Tests: `npm test` (vitest — partner intro/RSVP parse, rate-limit helper, people filter, Forth snapshot)
 
 ## Smoke test
 
@@ -63,6 +66,8 @@ PM status from a committed Forth snapshot (`data/forth-status.json`, source http
 - [x] SEO + sitemap/robots + Open Graph card at `/opengraph-image`
 - [x] All roster portfolio links return 200
 - [x] Auth-aware header after claim
+- [x] Password reset + claim handle lock + partner API rate limits
+- [x] Neutral Project 1/2 portfolio labels
 - [x] `npm run build` + `npm test`
 
 ## Agent usage
